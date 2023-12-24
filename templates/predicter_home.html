@@ -11,7 +11,7 @@ Predicter home page
     <form action="predicter_home/results" method="post" enctype="multipart/form-data">
         <label for="file_for_retrain">Choose file:</label>
         <input type="file" name="file" id="file_for_retrain"
-               accept=".csv, application/vnd.ms-excel">
+               accept=".parquet">
 
         <!-- Кнопка с функцией predict -->
         <button class="btn btn-warning" type="submit">
@@ -24,7 +24,7 @@ Predicter home page
     <form action="predicter_home/predict" method="post" enctype="multipart/form-data">
         <label for="file_for_predict">Choose file:</label>
         <input type="file" name="file" id="file_for_predict"
-               accept=".csv, application/vnd.ms-excel">
+               accept=".parquet">
 
         <!-- Кнопка с функцией fit_predict -->
         <button class="btn btn-warning" type="submit">
