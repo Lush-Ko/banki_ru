@@ -116,13 +116,11 @@ async def fit_predict(file: UploadFile):
 @app.post("/predicter_home/predict")
 async def predict(file: UploadFile):
     content = await file.read()
-    with open("uploaded_file.csv", "wb") as f:
+    with open("uploaded_file.parquet", "wb") as f:
         f.write(content)
     # Process the file using Pandas or any other library
-    df = pd.read_csv(io.BytesIO(content))
-    # Store the data in PostgreSQL
-    with open("data/config.yaml", "r", encoding='utf-8') as stream:
-        args = yaml.safe_load(stream)['config_data']
-    df.to_csv(args['config_data']['preproc_file_path'], index=False)
+    df = pd.read_parquet(io.BytesIO(content))
     predict_main()
-    return {"filename": file.filename, "content_type": file.content_type}
+    result_df = pd.read_csv('data/final_data.csv')
+    result_html = result_df.to_html()
+    return HTMLResponse(content=result_html)
