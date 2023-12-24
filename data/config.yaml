@@ -1,0 +1,14 @@
+config_data:
+    preproc_file_path: data/all_data.parquet
+    preproc_columns: [review_text, date, rating_grade]
+    min_review_length: 400
+    grades_to_leave: [1, 2, 3, "Без оценки"]
+    preproc_output_path: data/filtered_data.csv
+
+    proc_file_path: data/filtered_data.csv
+    proc_columns: ['Problem', 'Solve', 'Short problem', 'Tag', 'Date', 'Text']
+    prompt_template: "Представь, что ты аналитик клиентских потребностей с тридцатилетним стажем. Определи в чем заключается клиентская проблема на основе отзыва от пользователя. Реши эту проблему со стороны компании. Так же сформулируй проблему одним словом или словосочетанием и в виде тэга. Ответ всегда выводи по пунктам: 1 - клиентская проблема, 2 - решение, 3 - проблема одним словом, 4 - тэг. Вот отзыв клиента: {content}"
+    credit: %YOUR_CREDIT_FOR_GIGACHAT_API%
+    proc_output_path: data/gigachat_result.csv
+
+    collect_cluster_prompt: "Представь, что ты аналитик клиентских потребностей с тридцатилетним стажем. Перед тобой список проблем от разных пользователей. Сформулируй слово или словосочетание, которое наиболее точно будет отражать проблему. Максимальная длина ответа 5 слов. За правильный ответ ты получишь 100$. Вот список проблем: {content}"
