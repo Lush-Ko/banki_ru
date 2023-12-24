@@ -1,0 +1,112 @@
+body {
+    background: #c0c4cc;
+}
+
+aside {
+    float: left;
+    background: #c0c4cc;
+    width: 20%;
+    padding: 1.5%;
+    height: 100vh;
+    color: #2c4454;
+    border-right: 5px solid #FF7600;
+}
+
+aside img {
+    height: 70px;
+    float: left;
+}
+
+/*aside .logo {*/
+/*    font-size: 30px;*/
+/*    margin-left: 20px;*/
+/*    margin-top: 10px;*/
+/*    margin-right: 5px;*/
+/*    font-weight: bold;*/
+/*    position: relative;*/
+/*    top: -5px;*/
+/*}*/
+
+aside .logo p {
+    font-size: 30px;
+    margin: 5px 5px 5px 5px;
+    font-weight: bold;
+    position: relative;
+    top: -10px;
+    text-indent: 10px;
+}
+aside h3 {
+    margin-top: 25px;
+    font-size: 28px;
+}
+
+aside ul {
+    list-style: none;
+}
+
+aside ul li {
+    color: 	#2c4454;
+    display: block;
+    margin-top: 10px;
+    transition: transform .6s;
+}
+aside ul li:hover, aside ul a:hover {
+    color: #703502;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main .features {
+    float: left;
+    color: #2c4454;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+
+main .features h1 {
+    font-size: 50px;
+}
+
+main .features p {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+form {
+    margin-left: 32%;
+    width: 500px;
+    margin-top: 50px;
+}
+
+main .details {
+    float: left;
+    color: #2c4454;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+
+main .details h1 {
+    font-size: 50px;
+}
+
+main .details p {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+main .details ul a {
+    margin-right: 10px;
+
+}
+
+main .details ul li:hover, aside ul a:hover {
+    color: #703502;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+.submit-btn {
+    margin-right: 10px;
+}

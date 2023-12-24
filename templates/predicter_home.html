@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block title_content %}
+Predicter home page
+{% endblock title_content%}
+
+{% block body_content %}
+<div class="features">
+    <h1>Upload CSV/Excel</h1>
+    <!-- HTML-форма -->
+    <form action="predicter_home/results" method="post" enctype="multipart/form-data">
+        <label for="file_for_retrain">Choose file:</label>
+        <input type="file" name="file" id="file_for_retrain"
+               accept=".csv, application/vnd.ms-excel">
+
+        <!-- Кнопка с функцией predict -->
+        <button class="btn btn-warning" type="submit">
+            <img src="static/karych.png" width="75">
+            <span class="logo">Переобучить модель</span>
+        </button>
+    </form>
+
+    <!-- HTML-форма для второй функции fit_predict -->
+    <form action="predicter_home/predict" method="post" enctype="multipart/form-data">
+        <label for="file_for_predict">Choose file:</label>
+        <input type="file" name="file" id="file_for_predict"
+               accept=".csv, application/vnd.ms-excel">
+
+        <!-- Кнопка с функцией fit_predict -->
+        <button class="btn btn-warning" type="submit">
+            <img src="static/losyash2.png" width="104">
+            <span class="logo">Сделать предикт</span>
+        </button>
+    </form>
+</div>
+{% endblock body_content %}
